@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Skyvl Future Soft - Premium Web Development Agency. We build modern, animated, and high-performance websites that grow your business." />
+    <meta name="keywords" content="web development, UI/UX design, business websites, portfolio websites, Skyvl Future Soft" />
+    <title>Skyvl Future Soft | We Build the Future of the Web</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+      <div class="loader-content">
+        <div class="loader-logo">
+          <span class="loader-logo-text">SKYVL</span>
+          <span class="loader-logo-dot"></span>
+        </div>
+        <div class="loader-bar-container">
+          <div class="loader-bar"></div>
+        </div>
+        <p class="loader-tagline">Building the Future of the Web...</p>
+      </div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo">
+          <span class="logo-icon">⬡</span>
+          <span class="logo-text">Skyvl<span class="logo-accent"> Future Soft</span></span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+            <i class="fas fa-moon" id="theme-icon"></i>
+          </button>
+          <a href="#contact" class="btn-nav-cta">Get Started</a>
+          <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="hero" class="hero-section">
+      <canvas id="particle-canvas"></canvas>
+      <div class="hero-bg-orb orb1"></div>
+      <div class="hero-bg-orb orb2"></div>
+      <div class="hero-bg-orb orb3"></div>
+      <div class="hero-content">
+        <div class="hero-badge" data-aos="fade-down" data-aos-delay="200">
+          <span class="badge-dot"></span>
+          <span>🚀 Premium Web Development Agency</span>
+        </div>
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
+          We Build the<br>
+          <span class="gradient-text typed-text" id="typed-text"></span>
+        </h1>
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="500">
+          Custom websites that grow your business — beautifully crafted, blazing fast,<br class="desktop-br">
+          and built to convert visitors into loyal customers.
+        </p>
+        <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="700">
+          <a href="#portfolio" class="btn-primary" id="hero-work-btn">
+            <span>View Our Work</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn-secondary" id="hero-contact-btn">
+            <span>Get a Website</span>
+            <i class="fas fa-rocket"></i>
+          </a>
+        </div>
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="900">
+          <div class="hero-stat">
+            <span class="stat-num">150+</span>
+            <span class="stat-label">Projects Done</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">120+</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">5+</span>
+            <span class="stat-label">Years Exp</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll Down</span>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="about-section section-padding">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Who We Are</span>
+          <h2 class="section-title">About <span class="gradient-text">Skyvl Future Soft</span></h2>
+          <p class="section-subtitle">Crafting digital excellence since day one</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-image-container" data-aos="fade-right" data-aos-delay="200">
+            <div class="about-image-wrapper">
+              <div class="about-glow-ring"></div>
+              <div class="about-visual">
+                <div class="about-code-block">
+                  <div class="code-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="code-title">skyvl.js</span>
+                  </div>
+                  <div class="code-body">
+                    <div class="code-line"><span class="code-keyword">const</span> <span class="code-var">agency</span> = {</div>
+                    <div class="code-line indent"><span class="code-prop">name</span>: <span class="code-str">"Skyvl Future Soft"</span>,</div>
+                    <div class="code-line indent"><span class="code-prop">mission</span>: <span class="code-str">"Build Future"</span>,</div>
+                    <div class="code-line indent"><span class="code-prop">passion</span>: <span class="code-num">Infinity</span>,</div>
+                    <div class="code-line indent"><span class="code-prop">quality</span>: <span class="code-str">"Premium"</span>,</div>
+                    <div class="code-line indent"><span class="code-prop">clients</span>: <span class="code-str">"Happy ✓"</span></div>
+                    <div class="code-line">};</div>
+                    <div class="code-line code-comment">// Always delivering excellence</div>
+                    <div class="code-line"><span class="code-keyword">export default</span> agency;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-content" data-aos="fade-left" data-aos-delay="300">
+            <h3>We Are a <span class="gradient-text">Digital Innovation</span> Studio</h3>
+            <p class="about-desc">At Skyvl Future Soft, we don't just build websites — we craft powerful digital experiences that captivate your audience and drive real business growth. Our team of expert developers and designers are passionate about pushing boundaries.</p>
+            <div class="about-mission-vision">
+              <div class="mission-card glass-card">
+                <div class="mission-icon"><i class="fas fa-bullseye"></i></div>
+                <div>
+                  <h4>Our Mission</h4>
+                  <p>To empower businesses with cutting-edge web solutions that make them stand out in the digital world.</p>
+                </div>
+              </div>
+              <div class="mission-card glass-card">
+                <div class="mission-icon vision-icon"><i class="fas fa-eye"></i></div>
+                <div>
+                  <h4>Our Vision</h4>
+                  <p>To be the most trusted and innovative web development agency, transforming ideas into exceptional digital realities.</p>
+                </div>
+              </div>
+            </div>
+            <div class="about-counters">
+              <div class="counter-item" data-aos="zoom-in" data-aos-delay="400">
+                <span class="counter-num" data-target="150">0</span><span class="counter-plus">+</span>
+                <span class="counter-label">Projects Completed</span>
+              </div>
+              <div class="counter-item" data-aos="zoom-in" data-aos-delay="500">
+                <span class="counter-num" data-target="120">0</span><span class="counter-plus">+</span>
+                <span class="counter-label">Happy Clients</span>
+              </div>
+              <div class="counter-item" data-aos="zoom-in" data-aos-delay="600">
+                <span class="counter-num" data-target="5">0</span><span class="counter-plus">+</span>
+                <span class="counter-label">Years Experience</span>
+              </div>
+              <div class="counter-item" data-aos="zoom-in" data-aos-delay="700">
+                <span class="counter-num" data-target="99">0</span><span class="counter-plus">%</span>
+                <span class="counter-label">Client Satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section id="services" class="services-section section-padding">
+      <div class="section-bg-gradient"></div>
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">What We Do</span>
+          <h2 class="section-title">Our <span class="gradient-text">Services</span></h2>
+          <p class="section-subtitle">Comprehensive digital solutions tailored to your needs</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="100" id="service-webdev">
+            <div class="service-icon-wrapper">
+              <div class="service-icon-bg"></div>
+              <i class="fas fa-code service-icon"></i>
+            </div>
+            <h3>Website Development</h3>
+            <p>Custom, high-performance websites built with modern technologies. Fast, scalable, and SEO-optimized to help your business thrive online.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> React / Vue / Next.js</li>
+              <li><i class="fas fa-check"></i> Lightning Fast Performance</li>
+              <li><i class="fas fa-check"></i> Mobile-First Approach</li>
+            </ul>
+            <div class="service-card-glow"></div>
+          </div>
+          <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="200" id="service-uiux">
+            <div class="service-icon-wrapper">
+              <div class="service-icon-bg purple"></div>
+              <i class="fas fa-pen-nib service-icon purple-icon"></i>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>Stunning interfaces that users love. We combine aesthetics with usability to create designs that are both beautiful and conversion-focused.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Figma / Adobe XD</li>
+              <li><i class="fas fa-check"></i> User Research & Testing</li>
+              <li><i class="fas fa-check"></i> Prototype & Wireframes</li>
+            </ul>
+            <div class="service-card-glow purple-glow"></div>
+          </div>
+          <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="300" id="service-business">
+            <div class="service-icon-wrapper">
+              <div class="service-icon-bg cyan"></div>
+              <i class="fas fa-building service-icon cyan-icon"></i>
+            </div>
+            <h3>Business Websites</h3>
+            <p>Professional business websites that establish credibility and generate leads. Complete with CMS, contact forms, and analytics integration.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> CMS Integration</li>
+              <li><i class="fas fa-check"></i> Lead Generation</li>
+              <li><i class="fas fa-check"></i> Analytics Dashboard</li>
+            </ul>
+            <div class="service-card-glow cyan-glow"></div>
+          </div>
+          <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="400" id="service-portfolio">
+            <div class="service-icon-wrapper">
+              <div class="service-icon-bg pink"></div>
+              <i class="fas fa-images service-icon pink-icon"></i>
+            </div>
+            <h3>Portfolio Websites</h3>
+            <p>Showcase your work with stunning portfolio sites. Perfect for creatives, freelancers, and professionals wanting to make a lasting impression.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Custom Animations</li>
+              <li><i class="fas fa-check"></i> Gallery & Showcase</li>
+              <li><i class="fas fa-check"></i> Personal Branding</li>
+            </ul>
+            <div class="service-card-glow pink-glow"></div>
+          </div>
+          <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="500" id="service-ecommerce">
+            <div class="service-icon-wrapper">
+              <div class="service-icon-bg orange"></div>
+              <i class="fas fa-shopping-cart service-icon orange-icon"></i>
+            </div>
+            <h3>E-Commerce Solutions</h3>
+            <p>Powerful online stores with seamless checkout, inventory management, and payment gateways that maximize sales and customer satisfaction.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Shopify / WooCommerce</li>
+              <li><i class="fas fa-check"></i> Payment Gateway</li>
+              <li><i class="fas fa-check"></i> Inventory System</li>
+            </ul>
+            <div class="service-card-glow orange-glow"></div>
+          </div>
+          <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="600" id="service-seo">
+            <div class="service-icon-wrapper">
+              <div class="service-icon-bg green"></div>
+              <i class="fas fa-chart-line service-icon green-icon"></i>
+            </div>
+            <h3>SEO & Performance</h3>
+            <p>Boost your search rankings and page speed. Our technical SEO and performance optimization ensures your site reaches the top of Google.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Technical SEO Audit</li>
+              <li><i class="fas fa-check"></i> Core Web Vitals</li>
+              <li><i class="fas fa-check"></i> Speed Optimization</li>
+            </ul>
+            <div class="service-card-glow green-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PORTFOLIO SECTION ========== -->
+    <section id="portfolio" class="portfolio-section section-padding">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Our Work</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Portfolio</span></h2>
+          <p class="section-subtitle">A showcase of our finest digital creations</p>
+        </div>
+        <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="200">
+          <button class="filter-btn active" data-filter="all" id="filter-all">All Projects</button>
+          <button class="filter-btn" data-filter="business" id="filter-business">Business</button>
+          <button class="filter-btn" data-filter="portfolio" id="filter-portfolio">Portfolio</button>
+          <button class="filter-btn" data-filter="ecommerce" id="filter-ecommerce">E-Commerce</button>
+        </div>
+        <div class="portfolio-grid" id="portfolio-grid">
+          <div class="portfolio-item" data-category="business" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-card glass-card">
+              <div class="portfolio-image-wrapper">
+                <img src="/portfolio-business.png" alt="LuxeHotel Business Website" class="portfolio-img" loading="lazy"/>
+                <div class="portfolio-overlay">
+                  <div class="portfolio-overlay-content">
+                    <span class="portfolio-tag">Business</span>
+                    <h3>LuxeHotel Premium</h3>
+                    <p>Full-featured hotel booking platform</p>
+                    <a href="#" class="btn-demo" target="_blank" id="demo-luxe">
+                      <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-card-info">
+                <h3>LuxeHotel Premium</h3>
+                <span class="portfolio-tech">React · Node.js · Stripe</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="ecommerce" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-card glass-card">
+              <div class="portfolio-image-wrapper">
+                <img src="/portfolio-ecommerce.png" alt="ShopNova E-Commerce" class="portfolio-img" loading="lazy"/>
+                <div class="portfolio-overlay">
+                  <div class="portfolio-overlay-content">
+                    <span class="portfolio-tag ecommerce-tag">E-Commerce</span>
+                    <h3>ShopNova Store</h3>
+                    <p>Premium e-commerce with AI recommendations</p>
+                    <a href="#" class="btn-demo" target="_blank" id="demo-shopnova">
+                      <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-card-info">
+                <h3>ShopNova Store</h3>
+                <span class="portfolio-tech">Next.js · Shopify · Vercel</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="portfolio" data-aos="fade-up" data-aos-delay="300">
+            <div class="portfolio-card glass-card">
+              <div class="portfolio-image-wrapper">
+                <img src="/portfolio-portfolio.png" alt="CreativeStudio Portfolio" class="portfolio-img" loading="lazy"/>
+                <div class="portfolio-overlay">
+                  <div class="portfolio-overlay-content">
+                    <span class="portfolio-tag portfolio-tag-style">Portfolio</span>
+                    <h3>CreativeStudio</h3>
+                    <p>Award-winning designer portfolio site</p>
+                    <a href="#" class="btn-demo" target="_blank" id="demo-creative">
+                      <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-card-info">
+                <h3>CreativeStudio Portfolio</h3>
+                <span class="portfolio-tech">Vue.js · GSAP · Three.js</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="business" data-aos="fade-up" data-aos-delay="400">
+            <div class="portfolio-card glass-card">
+              <div class="portfolio-image-wrapper">
+                <img src="/hero-preview.png" alt="TechCorp Business Site" class="portfolio-img" loading="lazy"/>
+                <div class="portfolio-overlay">
+                  <div class="portfolio-overlay-content">
+                    <span class="portfolio-tag">Business</span>
+                    <h3>TechCorp Solutions</h3>
+                    <p>Corporate website with lead generation</p>
+                    <a href="#" class="btn-demo" target="_blank" id="demo-techcorp">
+                      <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-card-info">
+                <h3>TechCorp Solutions</h3>
+                <span class="portfolio-tech">HTML · CSS · JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="ecommerce" data-aos="fade-up" data-aos-delay="500">
+            <div class="portfolio-card glass-card">
+              <div class="portfolio-image-wrapper">
+                <img src="/portfolio-ecommerce.png" alt="FashionHub E-Commerce" class="portfolio-img" loading="lazy"/>
+                <div class="portfolio-overlay">
+                  <div class="portfolio-overlay-content">
+                    <span class="portfolio-tag ecommerce-tag">E-Commerce</span>
+                    <h3>FashionHub Boutique</h3>
+                    <p>Fashion store with virtual try-on</p>
+                    <a href="#" class="btn-demo" target="_blank" id="demo-fashion">
+                      <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-card-info">
+                <h3>FashionHub Boutique</h3>
+                <span class="portfolio-tech">React · WooCommerce · AWS</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="portfolio" data-aos="fade-up" data-aos-delay="600">
+            <div class="portfolio-card glass-card">
+              <div class="portfolio-image-wrapper">
+                <img src="/portfolio-portfolio.png" alt="PhotographerPro Portfolio" class="portfolio-img" loading="lazy"/>
+                <div class="portfolio-overlay">
+                  <div class="portfolio-overlay-content">
+                    <span class="portfolio-tag portfolio-tag-style">Portfolio</span>
+                    <h3>PhotographerPro</h3>
+                    <p>Stunning photography portfolio & booking</p>
+                    <a href="#" class="btn-demo" target="_blank" id="demo-photo">
+                      <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-card-info">
+                <h3>PhotographerPro Studio</h3>
+                <span class="portfolio-tech">Gatsby · Sanity CMS · Framer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE US SECTION ========== -->
+    <section id="why-us" class="why-us-section section-padding">
+      <div class="section-bg-gradient alt"></div>
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Our Edge</span>
+          <h2 class="section-title">Why Choose <span class="gradient-text">Us?</span></h2>
+          <p class="section-subtitle">We deliver more than just websites — we deliver results</p>
+        </div>
+        <div class="why-us-grid">
+          <div class="why-card glass-card" data-aos="fade-up" data-aos-delay="100" id="why-speed">
+            <div class="why-icon-wrapper">
+              <div class="why-icon-ring fast-ring">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div class="why-icon-pulse fast-pulse"></div>
+            </div>
+            <h3>Lightning Fast Delivery</h3>
+            <p>We deliver your project on time, every time. Our agile process ensures rapid development without compromising on quality.</p>
+            <div class="why-stat">
+              <span class="why-stat-num">7</span>
+              <span class="why-stat-label">Days Avg. Delivery</span>
+            </div>
+          </div>
+          <div class="why-card glass-card" data-aos="fade-up" data-aos-delay="200" id="why-design">
+            <div class="why-icon-wrapper">
+              <div class="why-icon-ring design-ring">
+                <i class="fas fa-palette"></i>
+              </div>
+              <div class="why-icon-pulse design-pulse"></div>
+            </div>
+            <h3>Modern Premium Design</h3>
+            <p>Every pixel is crafted with intention. We create stunning, contemporary designs that make your brand unforgettable.</p>
+            <div class="why-stat">
+              <span class="why-stat-num">100%</span>
+              <span class="why-stat-label">Custom Design</span>
+            </div>
+          </div>
+          <div class="why-card glass-card" data-aos="fade-up" data-aos-delay="300" id="why-price">
+            <div class="why-icon-wrapper">
+              <div class="why-icon-ring price-ring">
+                <i class="fas fa-tag"></i>
+              </div>
+              <div class="why-icon-pulse price-pulse"></div>
+            </div>
+            <h3>Affordable Pricing</h3>
+            <p>Premium quality doesn't have to break the bank. We offer competitive pricing with flexible packages for every budget.</p>
+            <div class="why-stat">
+              <span class="why-stat-num">3x</span>
+              <span class="why-stat-label">More Value</span>
+            </div>
+          </div>
+          <div class="why-card glass-card" data-aos="fade-up" data-aos-delay="400" id="why-support">
+            <div class="why-icon-wrapper">
+              <div class="why-icon-ring support-ring">
+                <i class="fas fa-headset"></i>
+              </div>
+              <div class="why-icon-pulse support-pulse"></div>
+            </div>
+            <h3>24/7 Dedicated Support</h3>
+            <p>We're always here when you need us. Round-the-clock support means your website is always running at peak performance.</p>
+            <div class="why-stat">
+              <span class="why-stat-num">24/7</span>
+              <span class="why-stat-label">Support Available</span>
+            </div>
+          </div>
+          <div class="why-card glass-card" data-aos="fade-up" data-aos-delay="500" id="why-responsive">
+            <div class="why-icon-wrapper">
+              <div class="why-icon-ring responsive-ring">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="why-icon-pulse responsive-pulse"></div>
+            </div>
+            <h3>Fully Responsive</h3>
+            <p>Your website looks perfect on every device — mobile, tablet, laptop, and desktop. Zero compromise on any screen size.</p>
+            <div class="why-stat">
+              <span class="why-stat-num">100%</span>
+              <span class="why-stat-label">Mobile Friendly</span>
+            </div>
+          </div>
+          <div class="why-card glass-card" data-aos="fade-up" data-aos-delay="600" id="why-seo">
+            <div class="why-icon-wrapper">
+              <div class="why-icon-ring seo-ring">
+                <i class="fas fa-search"></i>
+              </div>
+              <div class="why-icon-pulse seo-pulse"></div>
+            </div>
+            <h3>SEO Optimized</h3>
+            <p>Built for search engines from the ground up. Our websites are structured to rank higher and drive organic traffic to your business.</p>
+            <div class="why-stat">
+              <span class="why-stat-num">Top 3</span>
+              <span class="why-stat-label">Google Ranking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="contact-section section-padding">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Let's Build <span class="gradient-text">Something Amazing</span></h2>
+          <p class="section-subtitle">Ready to transform your online presence? We'd love to hear from you.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+            <div class="contact-info-card glass-card">
+              <h3>Contact Information</h3>
+              <p>Fill out the form and our team will get back to you within 24 hours.</p>
+              <div class="contact-details">
+                <div class="contact-detail-item">
+                  <div class="contact-detail-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <span class="contact-detail-label">Email Us</span>
+                    <a href="mailto:skyvlfuturesoft@gmail.com" class="contact-detail-value">skyvlfuturesoft@gmail.com</a>
+                  </div>
+                </div>
+                <div class="contact-detail-item">
+                  <div class="contact-detail-icon phone-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div>
+                    <span class="contact-detail-label">Call Us</span>
+                    <a href="tel:+918610362451" class="contact-detail-value">+91 86103 62451 / +91 72005 25770</a>
+                  </div>
+                </div>
+                <div class="contact-detail-item">
+                  <div class="contact-detail-icon location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <span class="contact-detail-label">Location</span>
+                    <span class="contact-detail-value">India 🇮🇳 | Working Globally</span>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-social">
+                <a href="#" class="social-link" aria-label="LinkedIn" id="contact-linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Twitter" id="contact-twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram" id="contact-instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/skyvlfuturesoft" class="social-link" aria-label="GitHub" target="_blank" id="contact-github"><i class="fab fa-github"></i></a>
+              </div>
+              <div class="contact-availability">
+                <div class="availability-dot"></div>
+                <span>Available for new projects</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-wrapper" data-aos="fade-left" data-aos-delay="300">
+            <form class="contact-form glass-card" id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Full Name *</label>
+                  <div class="input-wrapper">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="contact-name" name="name" placeholder="John Doe" required />
+                  </div>
+                  <span class="field-error" id="name-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email Address *</label>
+                  <div class="input-wrapper">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="contact-email" name="email" placeholder="john@example.com" required />
+                  </div>
+                  <span class="field-error" id="email-error"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Phone Number</label>
+                <div class="input-wrapper">
+                  <i class="fas fa-phone input-icon"></i>
+                  <input type="tel" id="contact-phone" name="phone" placeholder="+91 86103 62451" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-service">Service Interested In</label>
+                <div class="input-wrapper select-wrapper">
+                  <i class="fas fa-laptop-code input-icon"></i>
+                  <select id="contact-service" name="service">
+                    <option value="">Select a service...</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+                    <option value="Business Website">Business Website</option>
+                    <option value="Portfolio Website">Portfolio Website</option>
+                    <option value="E-Commerce">E-Commerce Solution</option>
+                    <option value="SEO & Performance">SEO & Performance</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message *</label>
+                <div class="input-wrapper textarea-wrapper">
+                  <i class="fas fa-comment input-icon textarea-icon"></i>
+                  <textarea id="contact-message" name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+                </div>
+                <span class="field-error" id="message-error"></span>
+              </div>
+              <button type="submit" class="btn-submit" id="submit-btn">
+                <span class="btn-submit-text">Send Message</span>
+                <span class="btn-submit-loader" style="display:none">
+                  <i class="fas fa-spinner fa-spin"></i> Sending...
+                </span>
+                <i class="fas fa-paper-plane btn-icon"></i>
+              </button>
+            </form>
+            <!-- Success Message -->
+            <div class="success-message glass-card" id="success-message" style="display:none">
+              <div class="success-animation">
+                <div class="success-checkmark">
+                  <div class="check-icon">
+                    <span class="icon-line line-tip"></span>
+                    <span class="icon-line line-long"></span>
+                    <div class="icon-circle"></div>
+                    <div class="icon-fix"></div>
+                  </div>
+                </div>
+              </div>
+              <h3>Message Sent Successfully! 🎉</h3>
+              <p>Thank you for reaching out! We'll get back to you within 24 hours.</p>
+              <button class="btn-secondary" id="send-another">Send Another Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="footer-glow"></div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#hero" class="footer-logo">
+              <span class="logo-icon">⬡</span>
+              <span>Skyvl<span class="logo-accent"> Future Soft</span></span>
+            </a>
+            <p class="footer-desc">Building the future of the web, one pixel at a time. Premium web solutions for businesses that want to stand out.</p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link" aria-label="LinkedIn" id="footer-linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Twitter" id="footer-twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Instagram" id="footer-instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://github.com/skyvlfuturesoft" class="footer-social-link" aria-label="GitHub" target="_blank" id="footer-github"><i class="fab fa-github"></i></a>
+              <a href="#" class="footer-social-link" aria-label="YouTube" id="footer-youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-links-col">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4 class="footer-heading">Services</h4>
+            <ul class="footer-links">
+              <li><a href="#services">Website Development</a></li>
+              <li><a href="#services">UI/UX Design</a></li>
+              <li><a href="#services">Business Websites</a></li>
+              <li><a href="#services">Portfolio Sites</a></li>
+              <li><a href="#services">E-Commerce</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact-col">
+            <h4 class="footer-heading">Contact Us</h4>
+            <div class="footer-contact-items">
+              <div class="footer-contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:skyvlfuturesoft@gmail.com">skyvlfuturesoft@gmail.com</a>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+918610362451">+91 86103 62451 / +91 72005 25770</a>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>India 🇮🇳 | Working Globally</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 <strong>Skyvl Future Soft</strong>. All rights reserved. Made with <span class="heart">❤️</span> in India.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918610362451?text=Hi%20Skyvl%20Future%20Soft!%20I%20need%20a%20website." 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Chat on WhatsApp"
+       id="whatsapp-float">
+      <i class="fab fa-whatsapp"></i>
+      <span class="whatsapp-tooltip">Chat with us!</span>
+    </a>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Main JS -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
