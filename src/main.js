@@ -110,25 +110,27 @@ backToTop.addEventListener('click', () => {
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 
-let isDark = true;
+let isDark = false;
 
 const savedTheme = localStorage.getItem('skyvl-theme');
-if (savedTheme === 'light') {
-  document.body.classList.add('light-theme');
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark-theme');
   themeIcon.className = 'fas fa-sun';
-  isDark = false;
+  isDark = true;
+} else {
+  themeIcon.className = 'fas fa-moon';
 }
 
 themeToggle.addEventListener('click', () => {
   isDark = !isDark;
-  if (!isDark) {
-    document.body.classList.add('light-theme');
+  if (isDark) {
+    document.body.classList.add('dark-theme');
     themeIcon.className = 'fas fa-sun';
-    localStorage.setItem('skyvl-theme', 'light');
-  } else {
-    document.body.classList.remove('light-theme');
-    themeIcon.className = 'fas fa-moon';
     localStorage.setItem('skyvl-theme', 'dark');
+  } else {
+    document.body.classList.remove('dark-theme');
+    themeIcon.className = 'fas fa-moon';
+    localStorage.setItem('skyvl-theme', 'light');
   }
 });
 
@@ -160,8 +162,8 @@ class Particle {
     this.vx = (Math.random() - 0.5) * 0.3;
     this.vy = (Math.random() - 0.5) * 0.3;
     this.radius = Math.random() * 2 + 0.5;
-    this.alpha = Math.random() * 0.4 + 0.1;
-    this.color = Math.random() > 0.5 ? '79, 142, 247' : '124, 58, 237';
+    this.alpha = Math.random() * 0.25 + 0.05;
+    this.color = Math.random() > 0.5 ? '67, 97, 238' : '124, 58, 237';
   }
 
   update() {
@@ -209,7 +211,7 @@ function drawConnections() {
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(79, 142, 247, ${alpha})`;
+        ctx.strokeStyle = `rgba(67, 97, 238, ${alpha})`;
         ctx.lineWidth = 0.5;
         ctx.stroke();
       }
