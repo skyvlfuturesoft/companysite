@@ -1,0 +1,19 @@
+name: Keep Website and Supabase Alive
+
+on:
+  schedule:
+    # Runs every 12 hours
+    - cron: '0 */12 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Live Website
+        run: |
+          curl -I https://companysite-amber.vercel.app/
+
+      - name: Ping Admin Page
+        run: |
+          curl -I https://companysite-amber.vercel.app/admin.html
