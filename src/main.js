@@ -339,6 +339,100 @@ try {
 }
 
 // =============================================
+// SUPABASE PORTFOLIO LOADER
+// =============================================
+const DEFAULT_PROJECTS = [
+  { id: 'luxe', title: 'LuxeHotel Premium', category: 'business', tech: 'React · Node.js · Stripe', description: 'Full-featured hotel booking platform', demo_url: '#', image: '/portfolio-business.png', alt_text: 'LuxeHotel Business Website' },
+  { id: 'shopnova', title: 'ShopNova Store', category: 'ecommerce', tech: 'Next.js · Shopify · Vercel', description: 'Premium e-commerce with AI recommendations', demo_url: '#', image: '/portfolio-ecommerce.png', alt_text: 'ShopNova E-Commerce' },
+  { id: 'creative', title: 'CreativeStudio Portfolio', category: 'portfolio', tech: 'Vue.js · GSAP · Three.js', description: 'Award-winning designer portfolio site', demo_url: '#', image: '/portfolio-portfolio.png', alt_text: 'CreativeStudio Portfolio' },
+  { id: 'techcorp', title: 'TechCorp Solutions', category: 'business', tech: 'HTML · CSS · JavaScript', description: 'Corporate website with lead generation', demo_url: '#', image: '/hero-preview.png', alt_text: 'TechCorp Business Site' },
+  { id: 'fashion', title: 'FashionHub Boutique', category: 'ecommerce', tech: 'React · WooCommerce · AWS', description: 'Fashion store with virtual try-on', demo_url: '#', image: '/portfolio-ecommerce.png', alt_text: 'FashionHub E-Commerce' },
+  { id: 'photo', title: 'PhotographerPro Studio', category: 'portfolio', tech: 'Gatsby · Sanity CMS · Framer', description: 'Stunning photography portfolio & booking', demo_url: '#', image: '/portfolio-portfolio.png', alt_text: 'PhotographerPro Portfolio' }
+];
+
+async function loadPortfolio() {
+  const grid = document.getElementById('portfolio-grid');
+  if (!grid) return;
+
+  let projects = DEFAULT_PROJECTS;
+
+  if (supabaseClient) {
+    try {
+      const { data, error } = await supabaseClient
+        .from('portfolio_projects')
+        .select('*')
+        .order('sort_order', { ascending: true });
+      if (!error && data && data.length) {
+        projects = data;
+        console.log('✅ Loaded projects from Supabase');
+      } else if (error) {
+        console.warn('Using default projects due to database query error:', error.message);
+      }
+    } catch (e) {
+      console.warn('Using default projects due to connection error:', e);
+    }
+  }
+
+  // Render projects
+  grid.innerHTML = '';
+  const badgeColors = {
+    business: '',
+    ecommerce: 'ecommerce-tag',
+    portfolio: 'portfolio-tag-style'
+  };
+  const categoryLabels = {
+    business: 'Business',
+    ecommerce: 'E-Commerce',
+    portfolio: 'Portfolio'
+  };
+
+  projects.forEach((p, idx) => {
+    const item = document.createElement('div');
+    item.className = 'portfolio-item';
+    item.dataset.category = p.category;
+    item.dataset.aos = 'fade-up';
+    item.dataset.aosDelay = (100 + idx * 100).toString();
+
+    const tagClass = badgeColors[p.category] || '';
+    const label = categoryLabels[p.category] || p.category;
+    const demoUrl = p.demo_url || '#';
+    const imgSrc = p.image || '/portfolio-business.png';
+
+    item.innerHTML = `
+      <div class="portfolio-card glass-card">
+        <div class="portfolio-image-wrapper">
+          <img src="${imgSrc}" alt="${p.alt_text || p.title}" class="portfolio-img" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <span class="portfolio-tag ${tagClass}">${label}</span>
+              <h3>${p.title}</h3>
+              <p>${p.description}</p>
+              <a href="${demoUrl}" class="btn-demo" target="_blank" id="demo-${p.id}">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-card-info">
+          <h3>${p.title}</h3>
+          <span class="portfolio-tech">${p.tech}</span>
+        </div>
+      </div>
+    `;
+    grid.appendChild(item);
+  });
+
+  // Re-initialize AOS to bind the dynamically created cards
+  if (window.AOS) {
+    AOS.refreshHard();
+  }
+}
+
+// Call on load
+window.addEventListener('DOMContentLoaded', loadPortfolio);
+
+
+// =============================================
 // EMAILJS SETUP
 // =============================================
 // ⚠️ Replace with your actual EmailJS credentials
